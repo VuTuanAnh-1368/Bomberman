@@ -12,6 +12,7 @@ import uet.oop.bomberman.entities.*;
 import uet.oop.bomberman.entities.Character.Balloom;
 import uet.oop.bomberman.entities.Character.Oneal;
 import uet.oop.bomberman.graphics.Sprite;
+import uet.oop.bomberman.keyboard.KeyControl;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
@@ -62,12 +63,16 @@ public class BombermanGame extends Application {
                 update();
             }
         };
+
         timer.start();
 
         createMap();
 
-        Entity bomberman = new Bomber(1, 1, Sprite.player_right.getFxImage());
+        Bomber bomberman = new Bomber(1, 1, Sprite.player_right.getFxImage());
         entities.add(bomberman);
+        KeyControl keyControl = new KeyControl(bomberman); // bomber là đối tượng Bomber bạn đã tạo ở bước trước
+        scene.setOnKeyPressed(keyControl);
+        scene.setOnKeyReleased(keyControl);
     }
 
     public void createMap() {
