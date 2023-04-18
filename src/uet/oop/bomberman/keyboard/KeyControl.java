@@ -17,7 +17,7 @@ public class KeyControl implements EventHandler<KeyEvent> {
         KeyCode keyCode = event.getCode();
 
         // Xử lý sự kiện từ bàn phím
-        if (event.getEventType() == KeyEvent.KEY_PRESSED) {
+        if (event.getEventType() == KeyEvent.KEY_PRESSED && bomber.getY() > 0 && bomber.getX() > 0) {
             // Xử lý sự kiện từ bàn phím khi phím được nhấn
             if (keyCode == KeyCode.UP) {
                 bomber.moveUp();

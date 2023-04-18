@@ -28,7 +28,7 @@ public class Bomber extends Entity {
     @Override
     public void update() {
         if (movingUp) {
-            setY(getY() - 1);
+            this.setY(getY() - 1);
         }
         if (movingDown) {
             setY(getY() + 1);
