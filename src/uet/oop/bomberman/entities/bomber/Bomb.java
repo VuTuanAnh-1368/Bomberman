@@ -1,4 +1,4 @@
-package uet.oop.bomberman.entities;
+package uet.oop.bomberman.entities.bomber;
 
 public class Bomb {
     private int x; // Tọa độ x của bom

@@ -7,6 +7,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import uet.oop.bomberman.graphics.Sprite;
 
+import java.awt.geom.Rectangle2D;
+
 public abstract class Entity {
     //Tọa độ X tính từ góc trái trên trong Canvas
     protected int x;
@@ -46,4 +48,20 @@ public abstract class Entity {
     public void setY(int y) {
         this.y = y;
     }
+
+    public boolean isCollidedWith(Entity other, int xNew, int yNew) {
+        // Tính toán khoảng cách giữa 2 đối tượng
+        double distance = Math.sqrt(Math.pow((xNew + Sprite.SCALED_SIZE/2) - (other.x + Sprite.SCALED_SIZE/2), 2) +
+                Math.pow((yNew + Sprite.SCALED_SIZE/2) - (other.y + Sprite.SCALED_SIZE/2), 2));
+        // Nếu khoảng cách nhỏ hơn hoặc bằng với bán kính của 2 đối tượng thì có va chạm
+        return distance <= Sprite.SCALED_SIZE;
+    }
+
+    public boolean intersects(Entity entity) {
+        return (this.getX() + Sprite.SCALED_SIZE > entity.getX()) &&
+                (this.getX() < entity.getX() + Sprite.SCALED_SIZE) &&
+                (this.getY() + Sprite.SCALED_SIZE > entity.getY()) &&
+                (this.getY() < entity.getY() + Sprite.SCALED_SIZE);
+    }
+
 }
