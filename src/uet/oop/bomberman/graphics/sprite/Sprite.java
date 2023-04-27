@@ -1,6 +1,7 @@
-package uet.oop.bomberman.graphics;
+package uet.oop.bomberman.graphics.sprite;
 
 import javafx.scene.image.*;
+import uet.oop.bomberman.graphics.SpriteSheet;
 
 import java.awt.image.BufferedImage;
 import java.nio.IntBuffer;
