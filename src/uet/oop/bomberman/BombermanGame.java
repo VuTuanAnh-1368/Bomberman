@@ -33,6 +33,14 @@ public class BombermanGame extends Application {
     private List<Entity> entities = new ArrayList<>();
     private List<Entity> stillObjects = new ArrayList<>();
 
+=======
+import javafx.application.Application;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+import uet.oop.bomberman.controller.GameMaster;
+
+public class BombermanGame extends Application {
+>>>>>>> tuananh
 
     public static void main(String[] args) {
         Application.launch(BombermanGame.class);
@@ -40,6 +48,7 @@ public class BombermanGame extends Application {
 
     @Override
     public void start(Stage stage) {
+<<<<<<< HEAD
         // Tao Canvas
         canvas = new Canvas(Sprite.SCALED_SIZE * WIDTH, Sprite.SCALED_SIZE * HEIGHT);
         gc = canvas.getGraphicsContext2D();
@@ -119,5 +128,12 @@ public class BombermanGame extends Application {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         stillObjects.forEach(g -> g.render(gc));
         entities.forEach(g -> g.render(gc));
+=======
+//        stage.setResizable(false);
+//        stage.getIcons().add(new Image("/textures/app_icon.png"));
+//        stage.setTitle("Bomberman v1.0");
+//        GameMaster gameMaster = new GameMaster(stage);
+//        gameMaster.run();
+>>>>>>> tuananh
     }
 }
