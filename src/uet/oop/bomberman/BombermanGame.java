@@ -9,11 +9,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 import uet.oop.bomberman.entities.*;
-import uet.oop.bomberman.entities.Character.Balloom;
-import uet.oop.bomberman.entities.Character.Oneal;
 import uet.oop.bomberman.graphics.Sprite;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
