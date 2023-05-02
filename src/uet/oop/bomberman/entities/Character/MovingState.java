@@ -1,4 +1,4 @@
-package uet.oop.bomberman.entities.character;
+package uet.oop.bomberman.entities.Character;
 
 import java.util.*;
 
