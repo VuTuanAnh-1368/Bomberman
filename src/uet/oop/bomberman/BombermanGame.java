@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.Item.Item;
 import uet.oop.bomberman.entities.Item.Portal;
-import uet.oop.bomberman.entities.character.Bomber;
+import uet.oop.bomberman.entities.Character.Bomber;
 import uet.oop.bomberman.entities.character.enemy.Enemy;
 
 import java.util.List;
