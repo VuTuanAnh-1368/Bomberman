@@ -1,4 +1,4 @@
-package uet.oop.bomberman.entities.item;
+package uet.oop.bomberman.entities.Item;
 
-public class Item {
+public abstract class Item extends Entity {
 }

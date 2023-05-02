@@ -1,4 +1,4 @@
 package uet.oop.bomberman.entities.Item;
 
-public class SpeedUp {
+public class SpeedUp extends Item {
 }

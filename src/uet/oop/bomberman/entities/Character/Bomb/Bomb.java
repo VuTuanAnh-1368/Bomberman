@@ -1,21 +1,21 @@
-package uet.oop.bomberman.entities.bomber;
+package uet.oop.bomberman.entities.character.Bomb;
 
-public class Bomb {
-    private int x; // Tọa độ x của bom
-    private int y; // Tọa độ y của bom
-
-    // Các phương thức khác và thuộc tính khác của lớp Bomb
-
-    public Bomb(int x, int y) {
-        this.x = x;
-        this.y = y;
-        // Các công việc khác cần thiết để khởi tạo đối tượng bom
-    }
-
-    // Các phương thức và thuộc tính khác của lớp Bomb
+/**
+ * Bomb class, manage bomb and what's related to it
+ * Vie: lớp bomb, quản lý những gì liên quan đến bom
+ */
+public class Bomb extends Entity implements Destroy {
+    /**
+     * Exploded?
+     * isExploding?
+     * time Exist when it's planted
+     * time Explode
+     *
+     * Vie:
+     * Đã nổ?
+     * Đang nổ?
+     * Thời gian tồn tại sau khi đặt
+     * Thời gian nổ
+     */
 }
-
-
-
-
 

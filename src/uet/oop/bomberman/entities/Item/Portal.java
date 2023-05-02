@@ -1,4 +1,4 @@
 package uet.oop.bomberman.entities.Item;
 
-public class Portal {
+public class Portal extends Item {
 }

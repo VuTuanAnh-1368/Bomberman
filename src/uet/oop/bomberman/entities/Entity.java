@@ -1,70 +1,60 @@
 package uet.oop.bomberman.entities;
 
-import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import uet.oop.bomberman.graphics.Sprite;
+import java.awt.Rectangle;
+
+import static uet.oop.bomberman.graphics.Sprite.SCALED_SIZE;
+import static uet.oop.bomberman.BombermanGame.WIDTH;
 
 public abstract class Entity {
-    //Tọa độ X tính từ góc trái trên trong Canvas
+
+    // Coordinate x, y
     protected int x;
-
-    //Tọa độ Y tính từ góc trái trên trong Canvas
     protected int y;
+    // Image of entity
+    protected Image image;
 
-    protected Image img;
-
-    //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
-    public Entity( int xUnit, int yUnit, Image img) {
-
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import uet.oop.bomberman.controller.GameMaster;
-import uet.oop.bomberman.graphics.sprite.Sprite;
-
-// Entity
-
-public abstract class Entity {
-    public int x;
-    public int y;
-    public Image img;
-
-    public Entity(int xUnit, int yUnit, Image img) {
->>>>>>> tuananh
-        this.x = xUnit * Sprite.SCALED_SIZE;
-        this.y = yUnit * Sprite.SCALED_SIZE;
-        this.img = img;
+    //Constructor
+    public Entity(int _x, int _y, Image image1) {
+        x = _x * SCALED_SIZE;
+        y = _y * SCALED_SIZE;
+        image = image1;
     }
 
-<<<<<<< HEAD
-    public void render(GraphicsContext gc) {
-        gc.drawImage(img, x, y);
-    }
-    public abstract void update();
-=======
-    public void isPressed(KeyCode keys, boolean isPress) {
-
-    }
-
-    public void pickSprite(Image img) {
-        this.img = img;
-    }
-
-//    public void render(GraphicsContext gc) {
-//        gc.drawImage(img, x - GameMaster.xCamera, y - GameMaster.yCamera);
-//    }
-
-    public abstract void update();
-
+    //Coordinate getter
     public int getX() {
         return x;
     }
-
     public int getY() {
         return y;
     }
->>>>>>> tuananh
+
+    // Check for Collision
+    protected boolean CollisionTest(Rectangle r1, Rectangle r2) {
+        return r1.intersects(r2);
+    }
+
+    /**
+     * @param graphicsContext: render piece of image to (x, y) in the scene
+     */
+    public void render(GraphicsContext graphicsContext) {
+        graphicsContext.drawImage(image, x, y);
+    }
+
+    /**
+     * @return java.awt rectangle surrounding entity.
+     */
+    public Rectangle getRectangle() {
+        return new Rectangle(x, y, SCALED_SIZE, SCALED_SIZE);
+    }
+
+    /**
+     * @return position of entity
+     */
+    public int getPosition() {
+        return (x / SCALED_SIZE) + (y / SCALED_SIZE * WIDTH);
+    }
+
+    public abstract void update();
 }

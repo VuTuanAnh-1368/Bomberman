@@ -1,4 +1,4 @@
 package uet.oop.bomberman.entities.Item;
 
-public class MoreBomb {
+public class MoreBomb extends Item {
 }
