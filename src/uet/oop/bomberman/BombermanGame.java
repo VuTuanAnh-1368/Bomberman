@@ -12,30 +12,25 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-
 import uet.oop.bomberman.entities.Item.Item;
 import uet.oop.bomberman.entities.Item.Portal;
 import uet.oop.bomberman.entities.Item.*;
 import uet.oop.bomberman.entities.Character.Bomber;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.Unmovable.*;
-
 import uet.oop.bomberman.entities.Character.enemy.Balloom;
 import uet.oop.bomberman.entities.Character.enemy.Doll;
 import uet.oop.bomberman.entities.Character.enemy.Enemy;
 import uet.oop.bomberman.entities.Character.enemy.Oneal;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.userInterface.Main;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import static uet.oop.bomberman.Sound.Sound.*;
+import static uet.oop.bomberman.sound.Sound.*;
 import static uet.oop.bomberman.graphics.Sprite.SCALED_SIZE;
-import static uet.oop.bomberman.entities.character.Bomber.*;
-
+import static uet.oop.bomberman.entities.Character.Bomber.*;
 import static uet.oop.bomberman.userInterface.userLoginController.username;
 import static uet.oop.bomberman.userInterface.Main.*;
 import static uet.oop.bomberman.userInterface.Main.addHistoryPlay;
@@ -163,7 +158,7 @@ public class BombermanGame {
      */
     public void createMap() {
         try {
-            String path = "Resources/levels/Level" + level + ".txt";
+            String path = "res/levels/Level" + level + ".txt";
             FileReader fileReader = new FileReader(path);
             Scanner sc = new Scanner(fileReader);
             sc.nextInt();
@@ -364,7 +359,7 @@ public class BombermanGame {
                 timeLoadImage--;
             }
             try {
-                inforImage = new Image(new FileInputStream("Resources/image/loseGame.jpg"));
+                inforImage = new Image(new FileInputStream("res/image/loseGame.jpg"));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -377,7 +372,7 @@ public class BombermanGame {
                 timeLoadImage--;
             }
             try {
-                inforImage = new Image(new FileInputStream("Resources/image/winGame.jpg"));
+                inforImage = new Image(new FileInputStream("res/image/winGame.jpg"));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -388,7 +383,7 @@ public class BombermanGame {
                 timeLoadImage--;
             }
             try {
-                String url = "Resources/image/level" + level + ".jpg";
+                String url = "res/image/level" + level + ".jpg";
                 inforImage = new Image(new FileInputStream(url));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -401,5 +396,4 @@ public class BombermanGame {
             }
         }
     }
-
 }

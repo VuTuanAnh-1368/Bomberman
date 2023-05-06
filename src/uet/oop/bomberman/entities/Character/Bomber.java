@@ -4,14 +4,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.Character.Bomb.Bomb;
-import uet.oop.bomberman.entities.character.enemy.Enemy;
+import uet.oop.bomberman.entities.Character.enemy.Enemy;
 import uet.oop.bomberman.graphics.Sprite;
 import java.util.List;
 import static uet.oop.bomberman.BombermanGame.FPS;
 import static uet.oop.bomberman.BombermanGame.enemies;
 import static uet.oop.bomberman.graphics.Sprite.SCALED_SIZE;
 import static uet.oop.bomberman.sound.Sound.*;
-import static uet.oop.bomberman.sound.Sound.bomberDieSound;
 import static uet.oop.bomberman.sound.Sound.plantBombSound;
 import static uet.oop.bomberman.entities.Character.Bomb.Bomb.resetFlameLength;
 
@@ -63,7 +62,6 @@ public class Bomber extends uet.oop.bomberman.entities.Character.Character {
             for (int i = 0; i < enemies.size(); i++) {
                 if (CollisionTest(this.getRectangle(), enemies.get(i).getRectangle())) {
                     //die
-                    playMedia(bomberDieSound);
                     deathLoading = true;
                 }
             }
@@ -107,7 +105,6 @@ public class Bomber extends uet.oop.bomberman.entities.Character.Character {
             if (bomb.isExploding) {
                 if (!deathLoading && bomb.collisionWithCharacter(this)) {
                     // if bomber died by bomb
-                    playMedia(bomberDieSound);
                     System.out.println("Bomber has died");
                     deathLoading = true;
                 }
