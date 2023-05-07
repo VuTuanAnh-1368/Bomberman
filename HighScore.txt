@@ -1,0 +1,7 @@
+USERNAME            POINT
+nhanh				50
+nhanh				220
+nhanh				50
+nhanh				290
+nhanh				100
+nhanh				710

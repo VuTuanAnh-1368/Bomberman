@@ -3,7 +3,6 @@ package uet.oop.bomberman.entities.Character.enemy;
 import javafx.scene.image.Image;
 import uet.oop.bomberman.entities.Character.MovingState;
 import uet.oop.bomberman.graphics.Sprite;
-
 import static uet.oop.bomberman.BombermanGame.FPS;
 import static uet.oop.bomberman.graphics.Sprite.SCALED_SIZE;
 

@@ -1,9 +1,7 @@
 package uet.oop.bomberman.entities.Item;
 
 import javafx.scene.image.Image;
-import uet.oop.bomberman.entities.character.Bomb.Bomb;
-
-import static uet.oop.bomberman.BombermanGame.*;
+import uet.oop.bomberman.entities.Character.Bomb.Bomb;
 
 public class LongerFlame extends Item {
     public LongerFlame(int x, int y, Image image) {

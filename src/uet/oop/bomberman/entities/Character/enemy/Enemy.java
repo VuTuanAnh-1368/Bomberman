@@ -3,7 +3,7 @@ package uet.oop.bomberman.entities.Character.enemy;
 import javafx.scene.image.Image;
 import uet.oop.bomberman.entities.Character.Character;
 import uet.oop.bomberman.entities.Character.MovingState;
-
+import static uet.oop.bomberman.BombermanGame.bomber;
 import static uet.oop.bomberman.BombermanGame.enemies;
 
 public abstract class Enemy extends Character {
@@ -95,7 +95,7 @@ public abstract class Enemy extends Character {
         }
         changeMovingState();
         checkCollisionEnemy();
-        //moveChecking(bomber.bom);
+        moveChecking(bomber.bom);
         move();
         updateImg();
     }

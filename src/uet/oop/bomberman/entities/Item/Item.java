@@ -2,13 +2,14 @@ package uet.oop.bomberman.entities.Item;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import java.awt.Rectangle;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.Unmovable.Grass;
-
+import java.awt.*;
 import static uet.oop.bomberman.BombermanGame.bomber;
 import static uet.oop.bomberman.BombermanGame.map;
 import static uet.oop.bomberman.graphics.Sprite.SCALED_SIZE;
+import static uet.oop.bomberman.sound.Sound.getItemSound;
+import static uet.oop.bomberman.sound.Sound.playMedia;
 
 
 public abstract class Item extends Entity {
@@ -28,7 +29,7 @@ public abstract class Item extends Entity {
     @Override
     public void update() {
         if (CollisionTest(this.getRectangle(), bomber.getRectangle())) {
-            //playMedia(getItemSound);
+            playMedia(getItemSound);
             powerUpBomber();
             Lying = false;
             image = null;

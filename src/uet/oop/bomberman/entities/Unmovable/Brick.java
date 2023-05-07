@@ -4,9 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.graphics.Sprite;
-
 import static uet.oop.bomberman.BombermanGame.FPS;
-
 
 public class Brick extends Entity {
     public boolean destroyed = false;

@@ -3,7 +3,6 @@ package uet.oop.bomberman.entities.Item;
 
 import javafx.scene.image.Image;
 import uet.oop.bomberman.entities.Unmovable.Grass;
-
 import static uet.oop.bomberman.BombermanGame.*;
 
 public class Portal extends Item {

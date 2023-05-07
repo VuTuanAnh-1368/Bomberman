@@ -3,7 +3,6 @@ package uet.oop.bomberman.entities;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import java.awt.Rectangle;
-
 import static uet.oop.bomberman.graphics.Sprite.SCALED_SIZE;
 import static uet.oop.bomberman.BombermanGame.WIDTH;
 
