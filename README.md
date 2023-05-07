@@ -53,12 +53,23 @@ Có nhiều loại Enemy trong Bomberman, tuy nhiên trong phiên bản này nh�
 
  <img src="res/image/instruction.png" alt="drawing" width="600" height="350"/>
 
-# Chúng tôi thiết kế 3 màn chơi level1, level2 và level3. Với độ khó tăng dần theo tên level.
+### Chúng tôi thiết kế 3 màn chơi level1, level2 và level3. Với độ khó tăng dần theo tên level.
 
 <img src="res/image/level1.jpg" alt="drawing" width="600" height="350"/>
 
-### Cây thừa kế cho các đối tượng của Game
+## Cây thừa kế cho các đối tượng của Game
 
  [CÂY THỪA KẾ BOMBERMAN](https://github.com/VuTuanAnh-1368/Bomberman/blob/main/UML%20Bomberman.pdf)
  
-
+## Cài đặt
+* Viết bằng ngôn ngữ Java
+* Sử dụng IntelliJ IDEA
+* Add `VM options`:
+  * `Run` -> `Edit Configurations...`
+    -> `Modify options` -> `Add VM options`:
+    > --module-path /path/to/javafx-sdk-17/lib
+    > --add-modules
+    > javafx.controls
+    > --add-modules
+    > javafx.fxml
+* `Run` -> `Run BombermanGame`
