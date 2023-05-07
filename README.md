@@ -67,7 +67,7 @@ Có nhiều loại Enemy trong Bomberman, tuy nhiên trong phiên bản này nh�
 * Add `VM options`:
   * `Run` -> `Edit Configurations...`
     -> `Modify options` -> `Add VM options`:
-    > --module-path /path/to/javafx-sdk-17/lib
+    > --module-path /path/to/javafx-sdk-20.0.1\lib
     > --add-modules
     > javafx.controls
     > --add-modules
