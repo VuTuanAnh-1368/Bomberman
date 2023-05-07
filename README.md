@@ -51,11 +51,11 @@ Có nhiều loại Enemy trong Bomberman, tuy nhiên trong phiên bản này nh�
 
 ## GIAO DIỆN GAME VÀ MÀN CHƠI (LEVEL)
 
-- ![](res/image/instruction.png){width=800 height=500}
+- <img src="res/image/instruction.png" alt="drawing" width="800" height="500"/>
 
 - Chúng tôi thiết kế 3 màn chơi level1, level2 và level3. Với độ khó tăng dần theo tên level.
+- <img src="res/image/level1.jpg" alt="drawing" width="800" height="500"/>
 
-- ![](res/image/level1.jpg){width=800 height=500}
 
 ### Cây thừa kế cho các đối tượng của Game
-- [!](UML Bomberman.pdf)
+- [CÂY THỪA KẾ BOMBERMAN](https://github.com/VuTuanAnh-1368/Bomberman/blob/main/UML%20Bomberman.pdf)
