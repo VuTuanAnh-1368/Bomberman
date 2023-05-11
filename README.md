@@ -1,69 +1,66 @@
-# Bomberman Game
+# Bomberman Game 
 
-Member:
-- Vũ Tuấn Anh : 21020429
-- Nguyễn Nhật Anh : 21020427
 
 <center>
    <img src="res/demo.png" alt="drawing" width="400"/>
 </center>
 
-## Mô tả về các đối tượng trong trò chơi
+## Description of objects in Bomberman game
 
-Nếu bạn đã từng chơi Bomberman, bạn sẽ cảm thấy quen thuộc với những đối tượng này. Chúng được được chia làm hai loại chính là nhóm đối tượng động (_Bomber_, _Enemy_, _Bomb_) và nhóm đối tượng tĩnh (_Grass_, _Wall_, _Brick_, _Door_, _Item_).
+If you have ever played Bomberman, you will be familiar with these objects. They are divided into two main groups: the dynamic objects (_Bomber_, _Enemy_, _Bomb_) and the static objects (_Grass_, _Wall_, _Brick_, _Door_, _Item_).
 
-- ![](res/sprites/player_down.png) _Bomber_ là nhân vật chính của trò chơi. Bomber có thể di chuyển theo 4 hướng trái/phải/lên/xuống theo sự điều khiển của người chơi.
-- ![](res/sprites/balloom_left1.png) _Enemy_ là các đối tượng mà Bomber phải tiêu diệt hết để có thể qua Level. Enemy có thể di chuyển ngẫu nhiên hoặc tự đuổi theo Bomber tùy theo loại Enemy. Các loại Enemy sẽ được mô tả cụ thể ở phần dưới.
-- ![](res/sprites/bomb.png) _Bomb_ là đối tượng mà Bomber sẽ đặt và kích hoạt tại các ô Grass. Khi đã được kích hoạt, Bomber và Enemy không thể di chuyển vào vị trí Bomb. Tuy nhiên ngay khi Bomber vừa đặt và kích hoạt Bomb tại ví trí của mình, Bomber có một lần được đi từ vị trí đặt Bomb ra vị trí bên cạnh. Sau khi kích hoạt 2s, Bomb sẽ tự nổ, các đối tượng _Flame_ ![](res/sprites/explosion_horizontal.png) được tạo ra.
+- ![](res/sprites/player_down.png) _Bomber_ s the main character of the game. Bomber can move in four directions left/right/up/down controlled by the player.
+- ![](res/sprites/balloom_left1.png) _Enemy_ is the object that Bomber has to eliminate to pass the level. Enemies can move randomly or chase after Bomber depending on the type of enemy. The types of enemy will be described specifically below.
+- ![](res/sprites/bomb.png) _Bomb_ is the object that Bomber will place and activate on Grass cells. Once activated, Bomber and Enemy cannot move to the Bomb's position. However, as soon as Bomber places and activates the Bomb at their location, Bomber can move once from the Bomb's position to the adjacent position. After being activated for 2 seconds, the Bomb will automatically explode, creating _Flame_ ![](res/sprites/explosion_horizontal.png) objects.
 
-- ![](res/sprites/grass.png) _Grass_ là đối tượng mà Bomber và Enemy có thể di chuyển xuyên qua, và cho phép đặt Bomb lên vị trí của nó
-- ![](res/sprites/wall.png) _Wall_ là đối tượng cố định, không thể phá hủy bằng Bomb cũng như không thể đặt Bomb lên được, Bomber và Enemy không thể di chuyển vào đối tượng này
-- ![](res/sprites/brick.png) _Brick_ là đối tượng được đặt lên các ô Grass, không cho phép đặt Bomb lên nhưng có thể bị phá hủy bởi Bomb được đặt gần đó. Bomber và Enemy thông thường không thể di chuyển vào vị trí Brick khi nó chưa bị phá hủy.
+- ![](res/sprites/grass.png) _Grass_ is the object that Bomber and Enemy can move through and allows Bomber to place a Bomb on its position.
+- ![](res/sprites/wall.png) _Wall_ is a fixed object that cannot be destroyed by a Bomb and cannot have a Bomb placed on it. Bomber and Enemy cannot move into this object.
+- ![](res/sprites/brick.png) _Brick_ is an object placed on Grass cells that cannot have a Bomb placed on it but can be destroyed by a Bomb placed nearby. Bomber and Enemy cannot move into the position of a Brick that has not yet been destroyed.
 
-- ![](res/sprites/portal.png) _Portal_ là đối tượng được giấu phía sau một đối tượng Brick. Khi Brick đó bị phá hủy, Portal sẽ hiện ra và nếu tất cả Enemy đã bị tiêu diệt thì người chơi có thể qua Level khác bằng cách di chuyển vào vị trí của Portal.
+- ![](res/sprites/portal.png) _Portal_ is an object hidden behind a Brick object. When that Brick is destroyed, the Portal will appear, and if all Enemies have been eliminated, the player can go to another Level by moving to the Portal's position.
 
-Các _Item_ cũng được giấu phía sau Brick và chỉ hiện ra khi Brick bị phá hủy. Bomber có thể sử dụng Item bằng cách di chuyển vào vị trí của Item. Thông tin về chức năng của các Item được liệt kê như dưới đây:
+_Items_ are also hidden behind Bricks and only appear when the Brick is destroyed. Bomber can use the Item by moving to its position. Information about the function of each Item is listed below:
 
-- ![](res/sprites/powerup_speed.png) _SpeedItem_ Khi sử dụng Item này, Bomber sẽ được tăng vận tốc di chuyển thêm một giá trị thích hợp
-- ![](res/sprites/powerup_flames.png) _FlameItem_ Item này giúp tăng phạm vi ảnh hưởng của Bomb khi nổ (độ dài các Flame lớn hơn)
-- ![](res/sprites/powerup_bombs.png) _BombItem_ Thông thường, nếu không có đối tượng Bomb nào đang trong trạng thái kích hoạt, Bomber sẽ được đặt và kích hoạt duy nhất một đối tượng Bomb. Item này giúp tăng số lượng Bomb có thể đặt thêm một.
+- ![](res/sprites/powerup_speed.png) _SpeedItem_ : When using this Item, Bomber's movement speed will be increased by an appropriate value.
+- ![](res/sprites/powerup_flames.png) _FlameItem_ Item : This Item helps to increase the range of influence of a Bomb when it explodes (the length of the Flame is increased).
+- ![](res/sprites/powerup_bombs.png) _BombItem_ : Normally, if there is no Bomb object in the activated state, Bomber will be able to place and activate only one Bomb object. This Item helps to increase the number of Bomb objects that can be placed by one.
 
-Có nhiều loại Enemy trong Bomberman, tuy nhiên trong phiên bản này nhóm tôi cài đặt các loại enemy sau: 
+There are many types of enemies in Bomberman, however, in this version, I have installed the following types of enemies:
 
-- ![](res/sprites/balloom_left1.png) _Balloom_ là Enemy đơn giản nhất, di chuyển ngẫu nhiên với vận tốc cố định
-- ![](res/sprites/oneal_left1.png) _Oneal_ có tốc độ di chuyển thay đổi, lúc nhanh, lúc chậm và di chuyển "thông minh" hơn so với Balloom (biết đuổi theo Bomber).
-- ![](res/sprites/doll_left1.png) _Doll_ có tốc độ di chuyển chậm, khi nó đối diện với Bomber (hàng ngang hoặc dọc) và giữa nó không có chướng ngại nào (kể cả Bomb) thì nó sẽ tăng độ di chuyển và đuổi theo Bomber.
-
-
-## Mô tả game play, xử lý va chạm và xử lý bom nổ.
-- Trong một màn chơi, Bomber sẽ được người chơi di chuyển, đặt và kích hoạt Bomb với mục tiêu chính là tiêu diệt tất cả Enemy và tìm ra vị trí Portal để có thể qua màn mới
-
-- Bomber sẽ bị giết khi va chạm với Enemy hoặc thuộc phạm vi Bomb nổ. Lúc đấy trò chơi kết thúc.
-
-- Enemy bị tiêu diệt khi thuộc phạm vi Bomb nổ
-
-- Một đối tượng thuộc phạm vi Bomb nổ có nghĩa là đối tượng đó va chạm với một trong các tia lửa được tạo ra tại thời điểm một đối tượng Bomb nổ.
-
-- Khi Bomb nổ, một Flame trung tâm ![](res/sprites/bomb_exploded.png) tại vị trí Bomb nổ và bốn Flame tại bốn vị trí ô đơn vị xung quanh vị trí của Bomb xuất hiện theo bốn hướng trên ![](res/sprites/explosion_vertical.png)/dưới ![](res/sprites/explosion_vertical.png) /trái ![](res/sprites/explosion_horizontal.png) /phải ![](res/sprites/explosion_horizontal.png). Độ dài bốn Flame xung quanh mặc định là 1 đơn vị, được tăng lên khi Bomber sử dụng các FlameItem.
-
-- Khi các Flame xuất hiện, nếu có một đối tượng thuộc loại Brick/Wall nằm trên vị trí một trong các Flame thì độ dài Flame đó sẽ được giảm đi để sao cho Flame chỉ xuất hiện đến vị trí đối tượng Brick/Wall theo hướng xuất hiện. Lúc đó chỉ có đối tượng Brick/Wall bị ảnh hưởng bởi Flame, các đối tượng tiếp theo không bị ảnh hưởng. Còn nếu vật cản Flame là một đối tượng Bomb khác thì đối tượng Bomb đó cũng sẽ nổ ngay lập tức.
+- ![](res/sprites/balloom_left1.png) _Balloom_ is the simplest Enemy, moving randomly at a fixed speed.
+- ![](res/sprites/oneal_left1.png) _Oneal_ has a changing movement speed, sometimes fast, sometimes slow, and moves "smarter" than Balloom (knows how to chase after Bomber).
+- ![](res/sprites/doll_left1.png) _Doll_: Its movement speed is slow, when it faces Bomber (horizontally or vertically) and there is no obstacle in between (including Bomb), it will increase its movement speed and chase after Bomber.
 
 
-## GIAO DIỆN GAME VÀ MÀN CHƠI (LEVEL)
+## Gameplay, collision handling, and bomb explosion processing are described as follows:
+- In a level, the player controls the Bomber character, placing and activating bombs with the main goal of destroying all enemies and finding the Portal to advance to the next level.
+
+- The Bomber will be killed if it collides with an enemy or is within the blast radius of a bomb. The game ends at that point.
+
+- Enemies are destroyed when they are within the blast radius of a bomb.
+
+- An object is within the blast radius of a bomb if it collides with one of the flames created at the time the bomb explodes.
+
+- When a bomb explodes, a Flame ![](res/sprites/bomb_exploded.png) is created at the center of the explosion and four Flames are created at the four adjacent tiles in the four cardinal directions up ![](res/sprites/explosion_vertical.png), down ![](res/sprites/explosion_vertical.png), left ![](res/sprites/explosion_horizontal.png), right ![](res/sprites/explosion_horizontal.png).The default length of each Flame is one tile, which can be increased when the Bomber uses Flame Items.
+
+- When Flames appear, if a Brick/Wall object is present on a tile that is part of a Flame, the length of that Flame will be reduced so that the Flame only extends up to the position of the Brick/Wall object in the direction it is moving. Only the Brick/Wall object is affected by the Flame at that point, while subsequent objects are not affected. However, if the obstacle in the Flame's path is another bomb object, that bomb will also explode immediately.
+
+
+## GAME INTERFACE AND LEVELS
 
  <img src="res/image/instruction.png" alt="drawing" width="600" height="350"/>
 
-### Chúng tôi thiết kế 3 màn chơi level1, level2 và level3. Với độ khó tăng dần theo tên level.
+### I designed 3 levels: level 1, level 2, and level 3. The difficulty level increases progressively with each level.
 
 <img src="res/image/level1.jpg" alt="drawing" width="600" height="350"/>
 
-## Cây thừa kế cho các đối tượng của Game
+## Inheritance tree for Game objects.
 
- [CÂY THỪA KẾ BOMBERMAN](https://github.com/VuTuanAnh-1368/Bomberman/blob/main/UML%20Bomberman.pdf)
+ [Inheritance tree for Game objects](https://github.com/VuTuanAnh-1368/Bomberman/blob/main/UML%20Bomberman.pdf)
  
-## Cài đặt
-* Viết bằng ngôn ngữ Java
-* Sử dụng IntelliJ IDEA
+## Setting
+* Write in Java programming language.
+* Using IntelliJ IDEA.
 * Add `VM options`:
   * `Run` -> `Edit Configurations...`
     -> `Modify options` -> `Add VM options`:
